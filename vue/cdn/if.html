@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if.html</title>
+</head>
+<body>
+  <div id="app">
+    <div v-if="score>=90">A등급</div>
+    <div v-else-if="score>=80">B등급</div>
+    <div v-else-if="score>=70">C등급</div>
+    <div v-else>D등급</div>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+ <script>
+  Vue.createApp({
+    data(){
+      return {
+        score : 90
+      }
+    }
+  }).mount("#app");
+  </script>
+</body>
+</html>

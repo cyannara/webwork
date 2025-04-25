@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <table>
+      <tr v-for="(emp, idx) in emps ">
+        <td>{{idx+1}}</td>
+        <td>{{emp.firstName}}</td>
+        <td>{{emp.dept}}</td>
+        <td>{{emp.sal}}</td>
+      </tr>
+    </table>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    Vue.createApp({
+      data(){
+        return {
+          emps : [ {firstName:"홍길동", dept:"개발",sal:2000 },
+                  {firstName:"홍길동", dept:"개발",sal:2000 } ,
+                  {firstName:"홍길동", dept:"개발",sal:2000 } ]
+        }
+      }
+    }).mount("#app");
+  </script>
+</body>
+</html>

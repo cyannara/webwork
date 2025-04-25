@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div v-for="(value,key) in emp ">
+         <label>{{key}}</label><input v-model="emp[key]">
+    </div>
+    <span v-for="n  in totalPage" v-html="n"></span>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+  Vue.createApp({
+     data(){
+      return {
+        totalPage : 5,
+        emp : { firstName : "홍길동", 
+                dept:"개발", 
+                sal:2000, 
+                hiredate:"2023-01-01" }
+      }
+     }
+    }).mount("#app");
+  </script>
+</body>
+</html>

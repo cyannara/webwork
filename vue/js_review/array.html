@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="fruit">
+    <p>사과</p>
+    <p>바나나</p>
+    <p>오렌지</p>
+  </div>
+  <script>
+    const fruits = document.querySelectorAll(".fruit p");
+    
+    //fruits.forEach((element, index)=>{ console.log(element.innerHTML)})
+    let arr = Array.from(fruits).map( ele => ele.innerHTML )
+    console.log(arr);
+    // [사과, 바나나, 오렌지]
+  </script>
+</body>
+</html>

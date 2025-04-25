@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    create();
+
+    function create(){
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body : "title=내일할일&body=js&userId=200" , //queryString
+        // body: JSON.stringify({
+        //   title: '오늘할일',
+        //   body: 'js공부하자',
+        //   userId: 1,
+        // }),
+        headers: {
+           //'Content-type': 'application/json; charset=UTF-8',
+           'Content-Type': 'application/x-www-form-urlencoded'
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    }
+  </script>
+</body>
+</html>
