@@ -1,0 +1,10 @@
+[{"employee_id":1,"first_name":"Massimiliano","last_name":"Rosoni","email":"mrosoni0@ibm.com","salary":"$9.23"},
+{"employee_id":2,"first_name":"Rikki","last_name":"Red","email":"rred1@nps.gov","salary":"$9.96"},
+{"employee_id":3,"first_name":"Datha","last_name":"Loosemore","email":"dloosemore2@behance.net","salary":"$6.59"},
+{"employee_id":4,"first_name":"Eimile","last_name":"Loton","email":"eloton3@dagondesign.com","salary":"$3.38"},
+{"employee_id":5,"first_name":"Emmalee","last_name":"Laboune","email":"elaboune4@salon.com","salary":"$8.40"},
+{"employee_id":6,"first_name":"Michal","last_name":"Ivanyushkin","email":"mivanyushkin5@hao123.com","salary":"$8.21"},
+{"employee_id":7,"first_name":"Robb","last_name":"Gauche","email":"rgauche6@fc2.com","salary":"$8.09"},
+{"employee_id":8,"first_name":"Ange","last_name":"Leon","email":"aleon7@ucla.edu","salary":"$0.33"},
+{"employee_id":9,"first_name":"Odilia","last_name":"Paye","email":"opaye8@rakuten.co.jp","salary":"$6.65"},
+{"employee_id":10,"first_name":"Marcos","last_name":"Tomicki","email":"mtomicki9@deliciousdays.com","salary":"$6.45"}]

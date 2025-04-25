@@ -38,6 +38,9 @@ export  default {
           <RouterLink to="/memberForm" class="nav-link" aria-current="page">회원가입</RouterLink>
         </li>        
         <li class="nav-item">
+          <RouterLink to="/empView" class="nav-link" aria-current="page">사원관리</RouterLink>
+        </li>         
+        <li class="nav-item">
           <RouterLink to="/paramView/kim" class="nav-link" aria-current="page">파라미터1</RouterLink>
         </li>   
         <li class="nav-item">
