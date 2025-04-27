@@ -7,9 +7,10 @@ import HelloWorld from "./components/HelloWorld.vue";
   <header>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/emp">사원관리</RouterLink>
+        <RouterLink to="/">Home</RouterLink> |
+        <RouterLink to="/about">About</RouterLink> |
+        <RouterLink to="/emp">사원관리</RouterLink> |
+        <RouterLink to="/nested">컴포넌트안에 다른 컴포넌트 사용</RouterLink> |
       </nav>
     </div>
   </header>
