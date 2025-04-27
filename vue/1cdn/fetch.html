@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fetch.html</title>
+</head>
+<body>
+  <script>
+    const url = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20240603'
+    fetch(url)
+    .then(res => res.json())
+    .then(res => console.log( res.boxOfficeResult.dailyBoxOfficeList[0].movieNm ))
+  </script>
+</body>
+</html>

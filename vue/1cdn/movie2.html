@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    .movieBoard {
+      border: 1px solid tomato
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div v-show="isLoading">로딩중....</div>
+
+    <input v-model="targetDt" @input.enter="getMovieList"><button @click="getMovieList">조회</button>
+
+    <div v-for="mv in movies" class="movieBoard">
+      <span v-text="mv.movieCd" @click="getMovieInfo(mv.movieCd)"></span>
+      <span>{{mv.movieNm}}</span>
+    </div>
+
+    <div>
+      <div>actors : <span v-for="actor in actors">{{actor.peopleNm}}</span></div>
+      <div>directors : <span v-for="director in directors">{{director.peopleNm}}</span></div>
+    </div>
+  </div>
+
+  <script>
+    const listurl = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=12664b24453335d2c3eca0fdc4b3b013&targetDt=`
+    let infourl = `https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=12664b24453335d2c3eca0fdc4b3b013&movieCd=`
+
+    Vue.createApp(
+      {
+        data() {
+          return {
+            movies: [{ movieNm: '듄', movieCd: 200 }],
+            movieInfo: {
+              movieNm: '듄', movieCd: 200,
+              actors: [{ peopleNm: '홍길동' }, { peopleNm: '김기자' }],
+              directors: [{ peopleNm: '나감독' }, { peopleNm: '이감독' }],
+            },
+            isLoading: false,
+            targetDt: "20250101",
+
+          }
+        },
+        methods: {
+          yesterday() {
+            const date = new Date();
+            date.setDate(date.getDate() - 1); // 하루 전으로 설정
+
+            const yyyymmdd = date.getFullYear().toString() +
+              String(date.getMonth() + 1).padStart(2, '0') +
+              String(date.getDate()).padStart(2, '0');
+            return yyyymmdd;
+          },
+          getMovieInfo(movieCd) {
+            this.isLoading = true;
+            fetch(infourl + movieCd)
+              .then(res => res.json())
+              .then(res => {
+                this.actors = res.movieInfoResult.movieInfo.actors;
+                this.directors = res.movieInfoResult.movieInfo.directors;
+                this.isLoading = false;
+              })
+          },
+          getMovieList() {
+            this.isLoading = true;
+            fetch(listurl + this.targetDt)
+              .then(res => res.json())
+              .then(res => {
+                this.movies = res.boxOfficeResult.dailyBoxOfficeList;
+                this.isLoading = false;
+              })
+          },
+          //버튼클릭핸들러 -> input ->  getMovies(dt)호출
+        },
+        created() {
+          this.targetDt = this.yesterday();
+          this.getMovieList();
+        },
+
+      }).mount("#app");
+
+
+  </script>
+</body>
+
+</html>

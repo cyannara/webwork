@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>사원명 : <span v-text="emp.empName"> </span> </div>
+    <div>부서 : {{emp.dept}} </div>
+    <div><img :src="emp.profile" style="width:200px"> </div>
+    <div @click="btnParentHandler">
+      <button type="button" @click.stop="btnInfoHandler">조회</button>
+      <a href="index.html"  @click.stop.prevent="aHandler">조회</a>
+    </div>
+  </div>
+  <script>
+    const { createApp } =  Vue;
+    //Vue.createApp
+    createApp({
+      data(){ return { emp: {empName : 'kim', dept : '개발', profile: 'profile.png'}}   },
+      created(){ console.log("생성됨") },
+      mounted(){ console.log("마운트됨") },
+      updated(){ console.log("화면업데이트됨") },
+      methods:{
+        aHandler() { alert('페이지 이동');  },
+        btnParentHandler(){ alert('전파 부모도 실행');    },
+        btnInfoHandler(){  alert(this.emp.empName);    }
+      }
+    }).mount("#app")
+
+  </script>
+</body>
+</html>
