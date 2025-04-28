@@ -69,6 +69,8 @@ empList.do            dept    get
 empInfo.do?id=1       emp/1   get
 ```
 
+## 얕은복사, 깊은복사
+
 ## EmpView.vue
 
 리스트에서 항목 클릭 → 폼에 데이터 표시  
@@ -87,5 +89,11 @@ empInfo.do?id=1       emp/1   get
 
 
 ## 과제
+```
+1번과제
+  vue 튜토리얼 7~13까지 따라하기
+
+2번과제
 TodoVoiw             : ParentComponent
-   <-  TodoItem      : ChildComponent 
+   <-  TodoItem      : ChildComponent
+```
