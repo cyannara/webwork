@@ -1,0 +1,25 @@
+하위에서 상위로 데이터 전달 하기
+이벤트를 발생을 이용
+
+child component가 하나의 이벤트를 가지고 있음
+template안의 버튼도 하나의 컴포넌트(자식)로 간주
+
+부모는 특정 이벤트를 기다리고, 자식은 이벤트를 발생
+이벤트가 발생되면 부모가 인지하여 부모컴포넌트가 가지고 있는 메소드를 호출할 수 있다.
+
+이벤트는 컴포넌트간에 발생한다.
+v-on디렉티브를 사용
+버튼에서 클릭이벤트가 발생하면 함수가 호출됨. 
+"<button v-on:click='함수 명시'>클릭클릭</button>"
+
+ template: "<button v-on:click='showLog'>클릭클릭</button>"
+- showLog는 부모가 가지고 있음
+
+//=============
+  <!-- mount point-->
+  <div id="app">
+    <child-component v-on:myevent="myFunc"></child-component>
+  </div>
+
+위에서 보면
+<div id="app"> 이 부모이다.
