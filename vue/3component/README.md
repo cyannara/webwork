@@ -53,6 +53,17 @@ http://localhost:3000/emp
 http://localhost:3000/emp/1
 ```
 
+## REST API 서버
+
+```
+URI                   REST
+empDelete?id=1        emp/1   delete
+empUpdate             dept/30 update 
+empInsert             dept    post
+empList.do            dept    get
+empInfo.do?id=1       emp/1   get
+```
+
 ## EmpView.vue
 
 리스트에서 항목 클릭 → 폼에 데이터 표시  
@@ -68,3 +79,8 @@ http://localhost:3000/emp/1
 | ref="listRef"                  | 부모에서 자식 메서드 호출                       |
 | this.$refs.listRef.fetchList() |                                                 |
 | watch                          | emp 변경되면 폼 입력값 동기화                   |
+
+
+## 과제
+TodoVoiw             : ParentComponent
+   <-  TodoItem      : ChildComponent 
