@@ -1,14 +1,14 @@
 <template>
- <child-component @send-message="sendMessage" />
+  <h3>부모컴포넌트</h3>
+  <child-component @send-message="sendMessage"></child-component>
 </template>
 <script>
-import ChildComponent from './ChildComponent4';
-export default {
- components: {ChildComponent},
- methods: {
-   sendMessage(data) {
-     console.log(data);
-   }
- }
+import ChildComponent from "../components/ChildComponent4.vue"
+export default {   components : {ChildComponent},
+  methods : {
+    sendMessage(message){
+      console.log(message)
+    }
+  }
 }
 </script>

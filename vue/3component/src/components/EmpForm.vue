@@ -59,11 +59,7 @@ export default {
   props: ["selemp"],
   data: function () {
     return {
-      depts: [
-        { dno: 10, dname: "개발" },
-        { dno: 20, dname: "인사" },
-        { dno: 30, dname: "총무" },
-      ],
+      depts: [],
       emp: {
         id: "",
         first_name: "",
@@ -89,10 +85,10 @@ export default {
     },
   },
   methods: {
+    fetchDeptList() {
+      axios.get("/dept").then((response) => (this.depts = response.data));
+    },
     empUpdate() {
-      console.log(JSON.stringify(this.emp));
-      //this.$emit("saved");
-      //this.reset();
       if (this.emp.id) {
         // 수정
         axios.put(`/emp/${this.emp.id}`, this.emp).then(() => {

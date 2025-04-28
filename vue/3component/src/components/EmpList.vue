@@ -1,3 +1,26 @@
+<template>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>사번</th>
+        <th>이름</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="emp in emps" :key="emp.id" @click="selectHandler(idx)">
+        >
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.first_name }} {{ emp.last_name }}</td>
+        <td>
+          <button @click="deleteHandler(emp.id)" class="ml-4 text-red-600">
+            삭제
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>
 <script>
 import axios from "axios";
 
@@ -11,7 +34,7 @@ export default {
     fetchList() {
       axios.get("/emp").then((res) => (this.emps = res.data));
     },
-    deleteEmp(employee_id) {
+    deleteHandler(employee_id) {
       if (confirm("정말 삭제하시겠습니까?")) {
         axios.delete(`/emp/${employee_id}`).then(() => {
           this.fetchList();
@@ -19,32 +42,13 @@ export default {
         });
       }
     },
+    selectHandler(idx) {
+      this.$emit("select", this.emps[idx]);
+    },
   },
   mounted() {
     this.fetchList();
   },
 };
 </script>
-<template>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>사번</th>
-        <th>이름</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="emp in emps" :key="emp.id" @click="$emit('select', emp)">
-        <td>{{ emp.id }}</td>
-        <td>{{ emp.first_name }} {{ emp.last_name }}</td>
-        <td>
-          <button @click="deleteEmp(emp.id)" class="ml-4 text-red-600">
-            삭제
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</template>
 <style></style>

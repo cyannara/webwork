@@ -37,35 +37,11 @@ const router = createRouter({
         import(/* webpackChunkName: "parent" */ "../views/ParentComponent.vue"),
     },
     {
-      path: "/parent2",
-      name: "ParentComponent2",
-      component: () =>
-        import(
-          /* webpackChunkName: "parent2" */ "../views/ParentComponent2.vue"
-        ),
-    },
-    {
-      path: "/parent3",
-      name: "ParentComponent3",
-      component: () =>
-        import(
-          /* webpackChunkName: "parent3" */ "../views/ParentComponent3.vue"
-        ),
-    },
-    {
       path: "/parent4",
       name: "ParentComponent4",
       component: () =>
         import(
           /* webpackChunkName: "parent4" */ "../views/ParentComponent4.vue"
-        ),
-    },
-    {
-      path: "/parent5",
-      name: "ParentComponent5",
-      component: () =>
-        import(
-          /* webpackChunkName: "parent5" */ "../views/ParentComponent5.vue"
         ),
     },
     {

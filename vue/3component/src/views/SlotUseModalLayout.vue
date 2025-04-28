@@ -7,16 +7,16 @@
       <p>팝업 컨텐츠 1</p>
       <p>팝업 컨텐츠 2</p>
     </template>
-    
+
     <template v-slot:footer>
-      <button type=“button”>닫기</button>
+      <button type="button">닫기</button>
     </template>
-    </modal-layout>
+  </modal-layout>
 </template>
 <script>
-import ModalLayout from './SlotModalLayout';
+import ModalLayout from "./SlotModalLayout";
 
 export default {
- components: {'modal-layout':ModalLayout}
-}
+  components: { "modal-layout": ModalLayout },
+};
 </script>
