@@ -47,6 +47,7 @@ referer : https://github.com/typicode/json-server
 1. 새 터미널창 열기
 
 ```sh
+$ npm install json-server
 $ npx json-server empdata.json
 ```
 
