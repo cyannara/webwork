@@ -28,7 +28,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 router / index.js 파일 변경
 
 ```js
- component: () =>import(/* webpackChunkName: "emp" */ "../views/EmpView.vue"),
+    {
+      path: '/nested',
+      name: 'nested',
+      component: () => import('../views/NestedComponent.vue'),
+    },
 ```
 
 ## json-server
