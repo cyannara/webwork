@@ -1,11 +1,31 @@
 # 컴포넌트 실습
 
+### 하위 컴포넌트에서 상위 컴포넌트로 데이터 전달하기
+
+이벤트를 발생하여 전달($emit)
+
+부모는 특정 이벤트를 기다리고, 자식은 이벤트를 발생
+
+```
+  this.$emit('myevent');
+```
+
+자식 컴포넌트에서 이벤트가 발생되면 부모가 인지하여 부모컴포넌트가 가지고 있는 메소드를 호출하여 실행한다.
+
+```vue
+<div id="app">
+    <child-component @myevent="parentFunc"/>
+  </div>
+```
+
 ## 새 프로젝트 생성
+
+### vite 프로젝트 생성
 
 ```sh
 npm create vue@latest
     3component    # 프로젝트명 입력
-    router        # 선택
+    router        # 패키지 선택
 cd 3component
 npm install
 npm install axios
@@ -13,7 +33,7 @@ npm install bootstrap
 npm run dev
 ```
 
-## 부트스트랩 임포트
+### 부트스트랩 임포트
 
 main.js
 
@@ -23,7 +43,7 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 ```
 
-## 라우터
+### 라우터
 
 router / index.js 파일 변경
 
@@ -63,7 +83,7 @@ http://localhost:3000/emp/1
 ```
 URI                   REST
 empDelete?id=1        emp/1   delete
-empUpdate             dept/30 update 
+empUpdate             dept/30 update
 empInsert             dept    post
 empList.do            dept    get
 empInfo.do?id=1       emp/1   get
@@ -87,8 +107,8 @@ empInfo.do?id=1       emp/1   get
 | this.$refs.listRef.fetchList() |                                                 |
 | watch                          | emp 변경되면 폼 입력값 동기화                   |
 
-
 ## 과제
+
 ```
 1번과제
   vue 튜토리얼 7~13까지 따라하기
