@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    async function getBoard() {
+      let res = await fetch("http://localhost:3000/board/1");
+      res = await res.json();
+      console.log("1", res.title);
+      console.log("2", "end response")
+    }
+
+    async function getBoardAxios() {
+      let res = await axios("http://localhost:3000/board/1");
+      console.log("1", res.data.title);
+      console.log("2", "end response")
+    }
+    
+    getBoardAxios();
+    console.log("3", "the end");
+  </script>
+</body>
+</html>
