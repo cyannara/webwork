@@ -2,7 +2,7 @@
   <div class="container">
     <form @submit.prevent>
       <label for="no">No.</label>
-      <input type="text" v-model="boardInfo.no" readonly />
+      <input type="text" v-model="boardInfo.id" readonly />
 
       <label for="title">제목</label>
       <input type="text" v-model="boardInfo.title" />
@@ -23,7 +23,7 @@
       <button
         type="button"
         class="btn btn-xs btn-info"
-        @click="saveBoard(boardInfo.no)"
+        @click="saveBoard(boardInfo.id)"
       >
         저장
       </button>
@@ -36,18 +36,20 @@ export default {
   data() {
     return {
       searchNo: "",
-      boardInfo: {   },
+      boardInfo: {},
     };
   },
   created() {
     this.searchNo = this.$route.query.id || "";
     if (this.searchNo > 0) {
       this.getBoardInfo();
-    } 
+    }
   },
   methods: {
     async getBoardInfo() {
-      let result = await axios.get(`http://localhost:3000/${this.searchNo}`);
+      let result = await axios.get(
+        `http://localhost:3000/board/${this.searchNo}`
+      );
       this.boardInfo = result.data;
     },
     async saveBoard(id) {
@@ -59,19 +61,18 @@ export default {
       };
       if (id > 0) {
         //수정
-        const result = await axios.put(`${url}/${no}`, param);
+        const result = await axios.put(`${url}/${id}`, param);
         alert("정상적으로 수정되었습니다.");
         this.$router.push({ path: "/boardList" });
       } else {
         //등록
-        const result = await axios.post(url, param); 
-        alert("정상적으로 등록되었습니다.")
+        const result = await axios.post(url, param);
+        alert("정상적으로 등록되었습니다.");
         this.$router.push({ path: "/boardList" });
       }
     },
   },
 };
-
 </script>
 <style scoped>
 /* Style inputs with type="text", select elements and textareas */
