@@ -40,19 +40,40 @@ let data = [
     "job_id": "it"
   }];
 
+//전체조회 REST 
 app.get('/emp', (req, res) => {
   res.send(data)
 })
 
-// 부서가 10번인 첫번째 사원
-app.get('/find', (req, res) => {
-  res.send('home hello!')
+//사원 단건조회
+app.get('/emp/:id', (req, res) => {
+  let id = req.params.id
+  let result = data.find( (emp) => emp.id == id )
+  if(result)
+    res.send(result)
+  else 
+    res.send("not find")
 })
 
-// job_id가 'it'인 사원만 조회
+
+// 부서가 10번인 첫번째 사원  find?departmentId=20
+app.get('/find', (req, res) => {
+  let departmentId = req.query.departmentId
+  let result = data.filter( (emp) => emp.department_id == departmentId )
+  if(result)
+    res.send(result)
+  else 
+    res.send("not find")
+})
+
+// job_id가 'it'인 사원만 조회  http://localhost:3000/filter?jobId=it
 app.get('/filter', (req, res) => {
-  
-  res.send('home hello!')
+  let jobId = req.query.jobId
+  let result = data.filter( (emp) => emp.job_id == jobId )
+  if(result)
+    res.send(result)
+  else 
+    res.send("not find")
 })
 
 // firstname 순으로 정렬

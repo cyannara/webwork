@@ -7,11 +7,14 @@
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "dev" : "nodemon app.js",
+    "dev": "nodemon app_method.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.2",
+    "mysql2": "^3.14.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
