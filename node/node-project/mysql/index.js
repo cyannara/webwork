@@ -1,6 +1,6 @@
 // mysql 모듈 로드
 const mysql = require("mysql2");
-
+const sqlList = require("./boardsql");
 // mysql 접속 정보
 // const conn = {
 //   host: "127.0.0.1",
@@ -32,7 +32,7 @@ const pool = mysql.createPool(conn);
 
 const query = async function (sql, values) {
   return new Promise((resolve, reject) => {
-    pool.query(sql, values, function (err, results, fields) {
+    pool.query(sqlList[sql], values, function (err, results, fields) {
       if (err) {
         reject(err);
       }
