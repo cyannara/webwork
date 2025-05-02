@@ -3,12 +3,12 @@ const router = express.Router();
 const query = require("../mysql");
 
 router.get("", async (req, res) => {
-  const result = await query("board", "selectList", null);
+  const result = await query("customer", "selectList", null);
   res.send(result);
 }); 
 //req.body  req.params  req.query  req.file
 router.post("", async (req, res)=>{ 
-  const result = await query('board',"insertInfo", [req.body.title, req.body.content,req.body.writer]);
+  const result = await query('customer',"insertInfo", [req.body.name, req.body.email,req.body.phone]);
   res.send(result);
 }); 
 
