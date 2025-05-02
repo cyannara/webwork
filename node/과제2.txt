@@ -1,0 +1,39 @@
+https://github.com/cyannara/webwork/js_review/README.md
+
+1. board 테이블 생성
+	id       pk, nn, ai
+        title    nn 
+        writer
+        content
+        created_date
+
+2. 쿼리구문만 모듈화
+   mysql/customerSql.js 참조   ==> boardSql.js 생성
+
+3. 라우터
+   /routers/customer.js 참조  ===> board.js 생성
+
+4. 보드 라우터 사용등록
+   app_mysql.js에서   ===> app.use('/board', _____)
+
+
+1번 과제: 댓글 목록/등록/삭제
+2번 과제: customer(백단)를 frontapp에 추가 -  ( CustomerList.vue >> router 추가 >> RouterLink 고객관리 )
+
+1. comment 테이블 생성
+	id       pk, nn, ai
+        writer
+        content
+        created_date  
+        bid           int
+
+2. 쿼리구문만 모듈화
+   mysql/customerSql.js 참조   ==> customerSql.js 생성
+  전체조회 : select * from comment where bid=?
+3. 라우터
+   /routers/customer.js 참조  ===> comment.js 생성
+
+4. 라우터 사용등록
+   app_mysql.js에서   ===> app.use('/comment', _____)
+
+front : boardInfo.vue
