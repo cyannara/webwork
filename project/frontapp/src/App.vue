@@ -26,16 +26,22 @@ import HelloWorld from "./components/HelloWorld.vue";
               class="nav-link active"
               aria-current="page"
               href="#"
-              >Home</RouterLink
-            >
+              >Home</RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink to="/about" class="nav-link" href="#">About</RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink to="/boardList" class="nav-link" href="#"
-              >게시판</RouterLink
-            >
+              >게시판</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/boardTable" class="nav-link" href="#"
+              >게시판테이블</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/login" class="nav-link" href="#"
+              >로그인</RouterLink>
           </li>
         </ul>
       </div>

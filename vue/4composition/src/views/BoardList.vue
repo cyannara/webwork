@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    
     <table class="table table-hover">
       <thead>
         <tr>
@@ -24,30 +25,28 @@
       </tbody>
     </table>
   </div>
+  {{ route.fullPath }}
 </template>
-<script>
+<script setup>
 import axios from "axios";
+import {ref,  defineProps} from 'vue';
+import {useRouter, useRoute} from 'vue-router';
 
-export default {
-  data() {
-    return {
-      boardList: [],
-    };
-  },
-  created() {
-    this.getBoardList();
-  },
-  methods: {
-    async getBoardList() {
-      let result = await axios.get(`/api/board`);
-      this.boardList = result.data;
-    },
-    goToDetail(id) {
-       //query: ?id=1      param : boardInfo/1
-      this.$router.push({ path: "/boardInfo", query: { id: id } });
-    },
-  },
+const router = useRouter();  //this.$router
+const route = useRoute();
+const boardList = ref([])
+
+const getBoardList = async()=>{
+  let result = await axios.get(`/api/board`);
+  boardList.value = result.data;
+};
+//const goToDetail = ()=>{};
+function goToDetail(){
+  router.push('/')
 }
+
+getBoardList();
+
 </script>
 <style scoped>
 table * {

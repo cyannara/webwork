@@ -55,7 +55,7 @@
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import axios from "axios";
 import CommentComp from "@/components/CommentComp.vue";
 export default {

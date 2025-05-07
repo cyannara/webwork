@@ -1,15 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import LoginView from '../views/LoginView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/login',
-      name: 'login',
-      component: LoginView,
-    },
     {
       path: '/',
       name: 'home',
@@ -24,25 +18,10 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
     {
-      path: '/boardTable',
-      name: 'boardTable',
-      component: () => import('../views/boardTable.vue'),
-    }, 
-    {
-      path: '/boardList',
-      name: 'boardList',
+      path: '/board',
+      name: 'board',
       component: () => import('../views/BoardList.vue'),
-    },    
-    {
-      path: '/boardInfo',
-      name: 'boardInfo',
-      component: () => import('../views/BoardInfo.vue'),
-    },  
-    {
-      path: '/boardForm',
-      name: 'boardForm',
-      component: () => import('../views/BoardForm.vue'),
-    },      
+    },
   ],
 })
 

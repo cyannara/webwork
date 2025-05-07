@@ -2,8 +2,8 @@
 
 // mysql 모듈 로드
 const mysql = require("mysql2");
-const customer = requre("./customerSql")
-const board = requre("./boardsql")
+const customer = require("./customerSql")
+const board = require("./boardsql")
 const sqllist = { customer:customer,  board:board }
 
 // mysql 접속 정보
