@@ -74,8 +74,8 @@ $ npx json-server empdata.json
 2. 브라우저에서 확인
 
 ```
-http://localhost:3000/emp
-http://localhost:3000/emp/1
+/api/emp
+/api/emp/1
 ```
 
 ## REST API 서버

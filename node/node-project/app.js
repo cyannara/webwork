@@ -66,7 +66,7 @@ app.get('/find', (req, res) => {
     res.send("not find")
 })
 
-// job_id가 'it'인 사원만 조회  http://localhost:3000/filter?jobId=it
+// job_id가 'it'인 사원만 조회  /api/filter?jobId=it
 app.get('/filter', (req, res) => {
   let jobId = req.query.jobId
   let result = data.filter( (emp) => emp.job_id == jobId )

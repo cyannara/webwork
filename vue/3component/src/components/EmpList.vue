@@ -24,7 +24,7 @@
 <script>
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3000"; // API 서버 주소
+axios.defaults.baseURL = "/api"; // API 서버 주소
 
 export default {
   data() {

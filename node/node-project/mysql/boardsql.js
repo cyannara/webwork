@@ -1,11 +1,11 @@
-const selectAll = "select * from board";
+const selectList = "select * from board";
 const selectById = "";
 const insertInfo = "";
 const updateInfo = "";
 const deleteInfo = "";
 
 module.exports = {
-  selectAll,
+  selectList,
   selectById,
   insertInfo,
   updateInfo,

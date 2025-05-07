@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     async getBoardInfo() {
-      let board = await axios.get(`http://localhost:3000/board/${this.searchNo}`);
+      let board = await axios.get(`/api/board/${this.searchNo}`);
       this.boardInfo = board.data[0];
     },
     goToUpdateForm(id) {

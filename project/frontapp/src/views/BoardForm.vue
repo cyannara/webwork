@@ -55,12 +55,12 @@ export default {
   methods: {
     async getBoardInfo() {
       let result = await axios.get(
-        `http://localhost:3000/board/${this.searchNo}`
+        `/api/board/${this.searchNo}`
       );
       this.boardInfo = result.data;
     },
     async saveBoard(id) {
-      const url = "http://localhost:3000/board";
+      const url = "/api/board";
       let param = {
         title: this.boardInfo.title,
         content: this.boardInfo.content,
