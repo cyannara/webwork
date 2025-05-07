@@ -30,5 +30,5 @@ connection.query(sql, function (err, results, fields) {
   // 3. 결과 처리
   console.log(results);
 });
-// DB 접속 종료(비동기이지만 SQL이 모두 실행되면 종료)
+// 4. DB 접속 종료(비동기이지만 SQL이 모두 실행되면 종료됨)
 connection.end();
