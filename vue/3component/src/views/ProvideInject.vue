@@ -4,18 +4,18 @@
   </div>
 </template>
 <script>
-import ProvideInjectChild from './ProvideInjectChild';
+import ProvideInjectChild from "../components/ProvideInjectChild";
 export default {
-  components: {ProvideInjectChild},
+  components: { ProvideInjectChild },
   data() {
     return {
-      items: ['A','B']
+      items: ["A", "B"],
     };
   },
   provide() {
     return {
-      itemLength: this.items.length
+      itemLength: this.items.length,
     };
-  }
-}
+  },
+};
 </script>

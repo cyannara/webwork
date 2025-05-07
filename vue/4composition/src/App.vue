@@ -1,14 +1,20 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
   <header>
-     <div class="wrapper">
+    <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/board">게시판</RouterLink>
+        <RouterLink to="/">Home</RouterLink> <br />
+        <RouterLink to="/about">About</RouterLink> <br />
+        <RouterLink to="/board">게시판</RouterLink> <br />
+        <RouterLink to="/nested">nested</RouterLink> <br />
+        <RouterLink to="/component">컴포넌트</RouterLink> <br />
+        <RouterLink to="/sync">sync</RouterLink> <br />
+        <RouterLink to="/parent">parent(ref)</RouterLink> <br />
+        <RouterLink to="/parent4">parent4(emit)</RouterLink> <br />
+        <RouterLink to="/provide">provide</RouterLink>
       </nav>
     </div>
   </header>
