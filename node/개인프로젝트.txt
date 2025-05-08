@@ -1,0 +1,61 @@
+node, vue  -> 프로젝트 구성
+
+0.테이블 설계 (id, 도서명, 도서소개, isbn, 저자  /  출판사, 도서이미지, 등록일자 ......)
+  workbench -> create table  
+
+■ 프로젝트 생성
+==============================================
+1.폴더 구성
+webwork
+   myApp 폴더
+      backend 폴더생성  >  cd 폴더명  > npm init  >  npm install
+      frontend  :npm create vue
+                 프로젝트명 입력 
+                 router, pinia 패키지 선택
+
+■ front 페이지
+==============================================
+2. vue 패키지 install  
+   1) 직접 설치 
+      npm install ___
+        axios, bootstrap, .... 
+
+   2) package.json 수정
+
+
+3. vite.config.js
+   server : proxy 설정
+
+4. vue 페이지 작성
+   도서관리 목록  : options/compositions API 선택
+                data() / ref()
+   도서정보 조회
+   도서정보 등록
+
+5. routers/ index.js
+
+6. app.vue -> <LouterLink>
+
+
+■ backend resp API 서버 구축 (node-project 참조)
+=============================================
+
+7. 미들웨어 패키지 설치 
+   express, morgan, multer, dotenv,  mysql2, session-file-store
+
+8. 폴더 및 파일 구성
+   router\
+     books.js
+   mysql\
+     .env
+     index.js
+   app.js 파일
+
+9. app.js 파일 생성
+   미들웨어 use() 
+   라우터  use()
+10. backend test (부메랑 ...)
+
+■ front와 backend 통합구현
+=============================================   
+11. axios 함수 이용하여 ajax호출

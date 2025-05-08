@@ -10,8 +10,7 @@ const books = reactive( [ 'Vue 2 - Advanced Guide',
  const answer = ref('질문에는 일반적으로 물음표가 포함됩니다.'); 
  const src = ref('');
 
-  // 계산된 ref 
-  // 계산된 속성은 의존된 반응형을 자동으로 추적
+  // 계산된 속성
   // book 이 변경되면 publishedBooksMessage 바인딩한 모든 것을 업데이트
   const publishedBooksMessage = computed( () => {  
     return books.length > 0 ? 'Yes' : 'No'  
