@@ -15,8 +15,9 @@ import HelloWorld from "./components/HelloWorld.vue";
           >부모컴포넌트에서 자식 컴포넌트의 이벤트 직접 발생</RouterLink
         >
         |
-        <!--<RouterLink to="/vuetify">vuetify</RouterLink> |-->
-        <RouterLink to="/bootstrap">bootstrap</RouterLink> |
+        <RouterLink to="/vuetify">vuetify</RouterLink> |
+        <RouterLink to="/store">store</RouterLink> |
+        <!--<RouterLink to="/bootstrap">bootstrap</RouterLink> |-->
       </nav>
     </div>
   </header>

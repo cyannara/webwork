@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Vuetify
 import "vuetify/styles";
 import { createVuetify } from "vuetify";
+import { createPinia } from "pinia";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
@@ -19,7 +20,9 @@ const vuetify = createVuetify({
 });
 
 const app = createApp(App);
+const pinia = createPinia();
 
 app.use(router);
 app.use(vuetify);
+app.use(pinia);
 app.mount("#app");
