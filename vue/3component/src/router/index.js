@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 //import EmpView from "../views/EmpView.vue";
 import HomeView from "../views/HomeView.vue";
+import VuetifyView from "@/views/VuetifyView.vue";
+import BootstrapView from "@/views/BootstrapView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -52,6 +54,8 @@ const router = createRouter({
           /* webpackChunkName: "slot" */ "../views/SlotUseModalLayout.vue"
         ),
     },
+    { path: "/vuetify", component: VuetifyView },
+    { path: "/bootstrap", component: BootstrapView },
   ],
 });
 
