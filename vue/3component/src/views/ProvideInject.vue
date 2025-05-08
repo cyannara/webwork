@@ -13,8 +13,7 @@ export default {
     };
   },
   provide() {
-    return {
-      itemLength: this.items.length,
+    return { itemLength: this.items.length,
     };
   },
 };

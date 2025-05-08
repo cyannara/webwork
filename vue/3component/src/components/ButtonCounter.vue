@@ -4,7 +4,7 @@
       <slot></slot>
     </button>
     <button @click="$emit('incrementevent')">emit {{ count }}</button>
-    <button @click="$emit('incrementevent', this.count + 1)">
+    <button @click="$emit('incrementevent', 0)">
       emit 인수{{ count }}
     </button>
     <button @click="incrementChild">핸들러 {{ count }}</button>

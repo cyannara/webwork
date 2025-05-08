@@ -11,10 +11,11 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink to="/board">게시판</RouterLink> <br />
         <RouterLink to="/nested">nested</RouterLink> <br />
         <RouterLink to="/component">컴포넌트</RouterLink> <br />
-        <RouterLink to="/sync">sync</RouterLink> <br />
+        <RouterLink to="/provide">provide</RouterLink><br />
+        <RouterLink to="/watch">watch</RouterLink> <br />
+        <!-- <RouterLink to="/sync">sync</RouterLink> <br />
         <RouterLink to="/parent">parent(ref)</RouterLink> <br />
-        <RouterLink to="/parent4">parent4(emit)</RouterLink> <br />
-        <RouterLink to="/provide">provide</RouterLink>
+        <RouterLink to="/parent4">parent4(emit)</RouterLink> <br /> -->
       </nav>
     </div>
   </header>

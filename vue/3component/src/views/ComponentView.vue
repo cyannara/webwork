@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    <hr>
     <ul>
       <li><router-link :to="{name:'product', params:{id:1}}">상품상세페이지로 이동</router-link></li>
       <li><router-link to="/productinfo">상품페이지로 이동</router-link></li>

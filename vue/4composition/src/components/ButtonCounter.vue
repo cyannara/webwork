@@ -3,7 +3,7 @@
     <h3>emit 테스트</h3>
     <button @click="incrementChild"><slot></slot></button>
     <button @click="$emit('incrementevent')">emit {{ props.count }}</button>
-    <button @click="$emit('incrementevent', props.count + 1)">
+    <button @click="$emit('incrementevent', 1)">
       emit 인수 전달{{ props.count }}
     </button>
     <button @click="incrementChild">핸들러 {{ props.count }}</button>

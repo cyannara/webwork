@@ -3,34 +3,25 @@
   <div class="container mt-4 border">
     <div class="card h-100 shadow-sm">
       <div class="card-header">
-        <h5 class="card-title">{{ title }} ( {{ author }} )</h5>
+        <h5 class="card-title">{{ props.title }} ( {{ author }} )</h5>
       </div>
       <div class="card-body">
         좋아요 {{ likes }}
-        <div v-if="is - published">출판됨</div>
+        <div v-if="isPublished">출판됨</div>
         <div v-else>작성중</div>
         <div class="mt-3">
           <h5>댓글리스트</h5>
           <div v-for="comment in commentIds">{{ comment }}</div>
         </div>
       </div>
-      <!-- <h6 class="card-subtitle mb-2 text-muted">
-              {{ post.author }} · {{ formatDate(post.createdAt) }}
-            </h6>
-            <p class="card-text">{{ post.summary }}</p>
-            <router-link
-              :to="`/posts/${post.id}`"
-              class="card-link text-decoration-none"
-            >
-              자세히 보기
-            </router-link>
-       -->
     </div>
   </div>
 </template>
 <script setup>
 import { defineProps } from "vue";
-
+//{{title}}  {{props.title}}
+//템플릿 안에서는 props 생략 가능함
+//script 안에서 props.title로 접근해야 함
 const props = defineProps({
   title: { type: String, required: true },
   author: String,
