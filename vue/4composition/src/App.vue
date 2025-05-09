@@ -13,6 +13,7 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink to="/component">컴포넌트</RouterLink> <br />
         <RouterLink to="/provide">provide</RouterLink><br />
         <RouterLink to="/watch">watch</RouterLink> <br />
+        <RouterLink to="/store">store</RouterLink> |
         <!-- <RouterLink to="/sync">sync</RouterLink> <br />
         <RouterLink to="/parent">parent(ref)</RouterLink> <br />
         <RouterLink to="/parent4">parent4(emit)</RouterLink> <br /> -->

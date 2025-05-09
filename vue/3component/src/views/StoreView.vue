@@ -8,6 +8,7 @@ import { mapState, mapActions } from "pinia";
 import { useCounterStore } from "@/stores/counter";
 export default {
   computed: {
+    //store state를 컴포넌트에 등록
     //computed()는 getters 프로퍼티가 됨.
     ...mapState(useCounterStore, ["name", "count"]),
   },

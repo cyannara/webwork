@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import StoreView from "../views/StoreView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -66,6 +67,7 @@ const router = createRouter({
           /* webpackChunkName: "parent4" */ "../views/ParentComponent4.vue"
         ),
     },
+    { path: "/store", component: StoreView },
   ],
 });
 
